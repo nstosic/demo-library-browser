@@ -8,26 +8,16 @@ part of 'book_relationships.dart';
 
 _$_BookRelationships _$$_BookRelationshipsFromJson(Map<String, dynamic> json) =>
     _$_BookRelationships(
-      author: json['author'] == null
-          ? null
-          : OneToOneRelationship.fromJson(
-              json['author'] as Map<String, dynamic>),
-      chapters: json['chapters'] == null
-          ? null
-          : OneToManyRelationship.fromJson(
-              json['chapters'] as Map<String, dynamic>),
-      photos: json['photos'] == null
-          ? null
-          : OneToManyRelationship.fromJson(
-              json['photos'] as Map<String, dynamic>),
-      series: json['series'] == null
-          ? null
-          : OneToOneRelationship.fromJson(
-              json['series'] as Map<String, dynamic>),
-      stores: json['stores'] == null
-          ? null
-          : OneToManyRelationship.fromJson(
-              json['stores'] as Map<String, dynamic>),
+      author:
+          OneToOneRelationship.fromJson(json['author'] as Map<String, dynamic>),
+      chapters: OneToManyRelationship.fromJson(
+          json['chapters'] as Map<String, dynamic>),
+      photos: OneToManyRelationship.fromJson(
+          json['photos'] as Map<String, dynamic>),
+      series:
+          OneToOneRelationship.fromJson(json['series'] as Map<String, dynamic>),
+      stores: OneToManyRelationship.fromJson(
+          json['stores'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_BookRelationshipsToJson(

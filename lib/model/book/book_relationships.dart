@@ -9,12 +9,13 @@ part 'book_relationships.g.dart';
 @freezed
 class BookRelationships extends BaseModel with _$BookRelationships {
   factory BookRelationships({
-    @JsonKey(name: 'author') OneToOneRelationship? author,
-    @JsonKey(name: 'chapters') OneToManyRelationship? chapters,
-    @JsonKey(name: 'photos') OneToManyRelationship? photos,
-    @JsonKey(name: 'series') OneToOneRelationship? series,
-    @JsonKey(name: 'stores') OneToManyRelationship? stores,
+    @JsonKey(name: 'author') required OneToOneRelationship author,
+    @JsonKey(name: 'chapters') required OneToManyRelationship chapters,
+    @JsonKey(name: 'photos') required OneToManyRelationship photos,
+    @JsonKey(name: 'series') required OneToOneRelationship series,
+    @JsonKey(name: 'stores') required OneToManyRelationship stores,
   }) = _BookRelationships;
 
-  factory BookRelationships.fromJson(Map<String, dynamic> json) => _$BookRelationshipsFromJson(json);
+  factory BookRelationships.fromJson(Map<String, dynamic> json) =>
+      _$BookRelationshipsFromJson(json);
 }

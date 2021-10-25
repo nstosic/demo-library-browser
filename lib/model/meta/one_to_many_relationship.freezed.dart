@@ -25,7 +25,7 @@ class _$OneToManyRelationshipTearOff {
   _OneToManyRelationship call(
       {@JsonKey(name: 'data')
       @ListRelationshipConverter()
-          List<RelationshipData>? data}) {
+          required List<RelationshipData> data}) {
     return _OneToManyRelationship(
       data: data,
     );
@@ -43,7 +43,7 @@ const $OneToManyRelationship = _$OneToManyRelationshipTearOff();
 mixin _$OneToManyRelationship {
   @JsonKey(name: 'data')
   @ListRelationshipConverter()
-  List<RelationshipData>? get data => throw _privateConstructorUsedError;
+  List<RelationshipData> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +59,7 @@ abstract class $OneToManyRelationshipCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'data')
       @ListRelationshipConverter()
-          List<RelationshipData>? data});
+          List<RelationshipData> data});
 }
 
 /// @nodoc
@@ -79,7 +79,7 @@ class _$OneToManyRelationshipCopyWithImpl<$Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<RelationshipData>?,
+              as List<RelationshipData>,
     ));
   }
 }
@@ -94,7 +94,7 @@ abstract class _$OneToManyRelationshipCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'data')
       @ListRelationshipConverter()
-          List<RelationshipData>? data});
+          List<RelationshipData> data});
 }
 
 /// @nodoc
@@ -116,7 +116,7 @@ class __$OneToManyRelationshipCopyWithImpl<$Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<RelationshipData>?,
+              as List<RelationshipData>,
     ));
   }
 }
@@ -125,7 +125,7 @@ class __$OneToManyRelationshipCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OneToManyRelationship implements _OneToManyRelationship {
   _$_OneToManyRelationship(
-      {@JsonKey(name: 'data') @ListRelationshipConverter() this.data});
+      {@JsonKey(name: 'data') @ListRelationshipConverter() required this.data});
 
   factory _$_OneToManyRelationship.fromJson(Map<String, dynamic> json) =>
       _$$_OneToManyRelationshipFromJson(json);
@@ -133,7 +133,7 @@ class _$_OneToManyRelationship implements _OneToManyRelationship {
   @override
   @JsonKey(name: 'data')
   @ListRelationshipConverter()
-  final List<RelationshipData>? data;
+  final List<RelationshipData> data;
 
   @override
   String toString() {
@@ -168,7 +168,7 @@ abstract class _OneToManyRelationship implements OneToManyRelationship {
   factory _OneToManyRelationship(
       {@JsonKey(name: 'data')
       @ListRelationshipConverter()
-          List<RelationshipData>? data}) = _$_OneToManyRelationship;
+          required List<RelationshipData> data}) = _$_OneToManyRelationship;
 
   factory _OneToManyRelationship.fromJson(Map<String, dynamic> json) =
       _$_OneToManyRelationship.fromJson;
@@ -176,7 +176,7 @@ abstract class _OneToManyRelationship implements OneToManyRelationship {
   @override
   @JsonKey(name: 'data')
   @ListRelationshipConverter()
-  List<RelationshipData>? get data;
+  List<RelationshipData> get data;
   @override
   @JsonKey(ignore: true)
   _$OneToManyRelationshipCopyWith<_OneToManyRelationship> get copyWith =>

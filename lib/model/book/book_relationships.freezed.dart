@@ -22,11 +22,11 @@ class _$BookRelationshipsTearOff {
   const _$BookRelationshipsTearOff();
 
   _BookRelationships call(
-      {@JsonKey(name: 'author') OneToOneRelationship? author,
-      @JsonKey(name: 'chapters') OneToManyRelationship? chapters,
-      @JsonKey(name: 'photos') OneToManyRelationship? photos,
-      @JsonKey(name: 'series') OneToOneRelationship? series,
-      @JsonKey(name: 'stores') OneToManyRelationship? stores}) {
+      {@JsonKey(name: 'author') required OneToOneRelationship author,
+      @JsonKey(name: 'chapters') required OneToManyRelationship chapters,
+      @JsonKey(name: 'photos') required OneToManyRelationship photos,
+      @JsonKey(name: 'series') required OneToOneRelationship series,
+      @JsonKey(name: 'stores') required OneToManyRelationship stores}) {
     return _BookRelationships(
       author: author,
       chapters: chapters,
@@ -47,15 +47,15 @@ const $BookRelationships = _$BookRelationshipsTearOff();
 /// @nodoc
 mixin _$BookRelationships {
   @JsonKey(name: 'author')
-  OneToOneRelationship? get author => throw _privateConstructorUsedError;
+  OneToOneRelationship get author => throw _privateConstructorUsedError;
   @JsonKey(name: 'chapters')
-  OneToManyRelationship? get chapters => throw _privateConstructorUsedError;
+  OneToManyRelationship get chapters => throw _privateConstructorUsedError;
   @JsonKey(name: 'photos')
-  OneToManyRelationship? get photos => throw _privateConstructorUsedError;
+  OneToManyRelationship get photos => throw _privateConstructorUsedError;
   @JsonKey(name: 'series')
-  OneToOneRelationship? get series => throw _privateConstructorUsedError;
+  OneToOneRelationship get series => throw _privateConstructorUsedError;
   @JsonKey(name: 'stores')
-  OneToManyRelationship? get stores => throw _privateConstructorUsedError;
+  OneToManyRelationship get stores => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,17 +69,17 @@ abstract class $BookRelationshipsCopyWith<$Res> {
           BookRelationships value, $Res Function(BookRelationships) then) =
       _$BookRelationshipsCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'author') OneToOneRelationship? author,
-      @JsonKey(name: 'chapters') OneToManyRelationship? chapters,
-      @JsonKey(name: 'photos') OneToManyRelationship? photos,
-      @JsonKey(name: 'series') OneToOneRelationship? series,
-      @JsonKey(name: 'stores') OneToManyRelationship? stores});
+      {@JsonKey(name: 'author') OneToOneRelationship author,
+      @JsonKey(name: 'chapters') OneToManyRelationship chapters,
+      @JsonKey(name: 'photos') OneToManyRelationship photos,
+      @JsonKey(name: 'series') OneToOneRelationship series,
+      @JsonKey(name: 'stores') OneToManyRelationship stores});
 
-  $OneToOneRelationshipCopyWith<$Res>? get author;
-  $OneToManyRelationshipCopyWith<$Res>? get chapters;
-  $OneToManyRelationshipCopyWith<$Res>? get photos;
-  $OneToOneRelationshipCopyWith<$Res>? get series;
-  $OneToManyRelationshipCopyWith<$Res>? get stores;
+  $OneToOneRelationshipCopyWith<$Res> get author;
+  $OneToManyRelationshipCopyWith<$Res> get chapters;
+  $OneToManyRelationshipCopyWith<$Res> get photos;
+  $OneToOneRelationshipCopyWith<$Res> get series;
+  $OneToManyRelationshipCopyWith<$Res> get stores;
 }
 
 /// @nodoc
@@ -103,77 +103,57 @@ class _$BookRelationshipsCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as OneToOneRelationship?,
+              as OneToOneRelationship,
       chapters: chapters == freezed
           ? _value.chapters
           : chapters // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
       photos: photos == freezed
           ? _value.photos
           : photos // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
       series: series == freezed
           ? _value.series
           : series // ignore: cast_nullable_to_non_nullable
-              as OneToOneRelationship?,
+              as OneToOneRelationship,
       stores: stores == freezed
           ? _value.stores
           : stores // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
     ));
   }
 
   @override
-  $OneToOneRelationshipCopyWith<$Res>? get author {
-    if (_value.author == null) {
-      return null;
-    }
-
-    return $OneToOneRelationshipCopyWith<$Res>(_value.author!, (value) {
+  $OneToOneRelationshipCopyWith<$Res> get author {
+    return $OneToOneRelationshipCopyWith<$Res>(_value.author, (value) {
       return _then(_value.copyWith(author: value));
     });
   }
 
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get chapters {
-    if (_value.chapters == null) {
-      return null;
-    }
-
-    return $OneToManyRelationshipCopyWith<$Res>(_value.chapters!, (value) {
+  $OneToManyRelationshipCopyWith<$Res> get chapters {
+    return $OneToManyRelationshipCopyWith<$Res>(_value.chapters, (value) {
       return _then(_value.copyWith(chapters: value));
     });
   }
 
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get photos {
-    if (_value.photos == null) {
-      return null;
-    }
-
-    return $OneToManyRelationshipCopyWith<$Res>(_value.photos!, (value) {
+  $OneToManyRelationshipCopyWith<$Res> get photos {
+    return $OneToManyRelationshipCopyWith<$Res>(_value.photos, (value) {
       return _then(_value.copyWith(photos: value));
     });
   }
 
   @override
-  $OneToOneRelationshipCopyWith<$Res>? get series {
-    if (_value.series == null) {
-      return null;
-    }
-
-    return $OneToOneRelationshipCopyWith<$Res>(_value.series!, (value) {
+  $OneToOneRelationshipCopyWith<$Res> get series {
+    return $OneToOneRelationshipCopyWith<$Res>(_value.series, (value) {
       return _then(_value.copyWith(series: value));
     });
   }
 
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get stores {
-    if (_value.stores == null) {
-      return null;
-    }
-
-    return $OneToManyRelationshipCopyWith<$Res>(_value.stores!, (value) {
+  $OneToManyRelationshipCopyWith<$Res> get stores {
+    return $OneToManyRelationshipCopyWith<$Res>(_value.stores, (value) {
       return _then(_value.copyWith(stores: value));
     });
   }
@@ -187,22 +167,22 @@ abstract class _$BookRelationshipsCopyWith<$Res>
       __$BookRelationshipsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'author') OneToOneRelationship? author,
-      @JsonKey(name: 'chapters') OneToManyRelationship? chapters,
-      @JsonKey(name: 'photos') OneToManyRelationship? photos,
-      @JsonKey(name: 'series') OneToOneRelationship? series,
-      @JsonKey(name: 'stores') OneToManyRelationship? stores});
+      {@JsonKey(name: 'author') OneToOneRelationship author,
+      @JsonKey(name: 'chapters') OneToManyRelationship chapters,
+      @JsonKey(name: 'photos') OneToManyRelationship photos,
+      @JsonKey(name: 'series') OneToOneRelationship series,
+      @JsonKey(name: 'stores') OneToManyRelationship stores});
 
   @override
-  $OneToOneRelationshipCopyWith<$Res>? get author;
+  $OneToOneRelationshipCopyWith<$Res> get author;
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get chapters;
+  $OneToManyRelationshipCopyWith<$Res> get chapters;
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get photos;
+  $OneToManyRelationshipCopyWith<$Res> get photos;
   @override
-  $OneToOneRelationshipCopyWith<$Res>? get series;
+  $OneToOneRelationshipCopyWith<$Res> get series;
   @override
-  $OneToManyRelationshipCopyWith<$Res>? get stores;
+  $OneToManyRelationshipCopyWith<$Res> get stores;
 }
 
 /// @nodoc
@@ -228,23 +208,23 @@ class __$BookRelationshipsCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as OneToOneRelationship?,
+              as OneToOneRelationship,
       chapters: chapters == freezed
           ? _value.chapters
           : chapters // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
       photos: photos == freezed
           ? _value.photos
           : photos // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
       series: series == freezed
           ? _value.series
           : series // ignore: cast_nullable_to_non_nullable
-              as OneToOneRelationship?,
+              as OneToOneRelationship,
       stores: stores == freezed
           ? _value.stores
           : stores // ignore: cast_nullable_to_non_nullable
-              as OneToManyRelationship?,
+              as OneToManyRelationship,
     ));
   }
 }
@@ -253,30 +233,30 @@ class __$BookRelationshipsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BookRelationships implements _BookRelationships {
   _$_BookRelationships(
-      {@JsonKey(name: 'author') this.author,
-      @JsonKey(name: 'chapters') this.chapters,
-      @JsonKey(name: 'photos') this.photos,
-      @JsonKey(name: 'series') this.series,
-      @JsonKey(name: 'stores') this.stores});
+      {@JsonKey(name: 'author') required this.author,
+      @JsonKey(name: 'chapters') required this.chapters,
+      @JsonKey(name: 'photos') required this.photos,
+      @JsonKey(name: 'series') required this.series,
+      @JsonKey(name: 'stores') required this.stores});
 
   factory _$_BookRelationships.fromJson(Map<String, dynamic> json) =>
       _$$_BookRelationshipsFromJson(json);
 
   @override
   @JsonKey(name: 'author')
-  final OneToOneRelationship? author;
+  final OneToOneRelationship author;
   @override
   @JsonKey(name: 'chapters')
-  final OneToManyRelationship? chapters;
+  final OneToManyRelationship chapters;
   @override
   @JsonKey(name: 'photos')
-  final OneToManyRelationship? photos;
+  final OneToManyRelationship photos;
   @override
   @JsonKey(name: 'series')
-  final OneToOneRelationship? series;
+  final OneToOneRelationship series;
   @override
   @JsonKey(name: 'stores')
-  final OneToManyRelationship? stores;
+  final OneToManyRelationship stores;
 
   @override
   String toString() {
@@ -313,11 +293,11 @@ class _$_BookRelationships implements _BookRelationships {
 
 abstract class _BookRelationships implements BookRelationships {
   factory _BookRelationships(
-          {@JsonKey(name: 'author') OneToOneRelationship? author,
-          @JsonKey(name: 'chapters') OneToManyRelationship? chapters,
-          @JsonKey(name: 'photos') OneToManyRelationship? photos,
-          @JsonKey(name: 'series') OneToOneRelationship? series,
-          @JsonKey(name: 'stores') OneToManyRelationship? stores}) =
+          {@JsonKey(name: 'author') required OneToOneRelationship author,
+          @JsonKey(name: 'chapters') required OneToManyRelationship chapters,
+          @JsonKey(name: 'photos') required OneToManyRelationship photos,
+          @JsonKey(name: 'series') required OneToOneRelationship series,
+          @JsonKey(name: 'stores') required OneToManyRelationship stores}) =
       _$_BookRelationships;
 
   factory _BookRelationships.fromJson(Map<String, dynamic> json) =
@@ -325,19 +305,19 @@ abstract class _BookRelationships implements BookRelationships {
 
   @override
   @JsonKey(name: 'author')
-  OneToOneRelationship? get author;
+  OneToOneRelationship get author;
   @override
   @JsonKey(name: 'chapters')
-  OneToManyRelationship? get chapters;
+  OneToManyRelationship get chapters;
   @override
   @JsonKey(name: 'photos')
-  OneToManyRelationship? get photos;
+  OneToManyRelationship get photos;
   @override
   @JsonKey(name: 'series')
-  OneToOneRelationship? get series;
+  OneToOneRelationship get series;
   @override
   @JsonKey(name: 'stores')
-  OneToManyRelationship? get stores;
+  OneToManyRelationship get stores;
   @override
   @JsonKey(ignore: true)
   _$BookRelationshipsCopyWith<_BookRelationships> get copyWith =>

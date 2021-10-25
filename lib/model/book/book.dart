@@ -10,10 +10,10 @@ part 'book.g.dart';
 @freezed
 class Book extends BaseModel with _$Book {
   factory Book({
-    @JsonKey(name: 'id') int? id,
-    @JsonKey(name: 'attributes') BookAttributes? attributes,
-    @JsonKey(name: 'relationships') BookRelationships? relationships,
-    @JsonKey(name: 'links') BookLinks? links,
+    @JsonKey(name: 'id') required String id,
+    @JsonKey(name: 'attributes') required BookAttributes attributes,
+    @JsonKey(name: 'relationships') required BookRelationships relationships,
+    @JsonKey(name: 'links') required BookLinks links,
   }) = _Book;
 
   factory Book.fromJson(Map<String, dynamic> json) => _$BookFromJson(json);
