@@ -28,6 +28,18 @@ void main() {
       softwareUnderTest.dispose();
     });
 
+    test('When viewModel is launched, the NavigationHandler is attached', () async {
+      // Setup
+      final _expectedNavigationHandler = MockNavigationHandler();
+      final _testViewModel = softwareUnderTest as TestViewModel;
+
+      // Execution
+      await _testViewModel.launch(_expectedNavigationHandler, null);
+
+      // Verification
+      expect(_testViewModel.navigation, equals(_expectedNavigationHandler));
+    });
+
     test('When viewModel is launched, it is initialized first', () async {
       // Setup
       final _testViewModel = softwareUnderTest as TestViewModel;

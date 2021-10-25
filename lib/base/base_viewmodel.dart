@@ -23,6 +23,7 @@ abstract class BaseViewModel extends ChangeNotifier {
 
   late NavigationHandler _navigation;
   @protected
+  @visibleForTesting
   NavigationHandler get navigation => _navigation;
 
   Future<T> load<T>(Future<T> Function() task) async {
