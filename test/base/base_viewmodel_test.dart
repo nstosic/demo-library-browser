@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:demo_books/base/base_viewmodel.dart';
+import 'package:demo_books/ui/navigation/navigation_handler.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 
 class TestViewModel extends BaseViewModel {
   bool _initExecuted = false;
@@ -11,6 +13,8 @@ class TestViewModel extends BaseViewModel {
     _initExecuted = true;
   }
 }
+
+class MockNavigationHandler extends Mock implements NavigationHandler {}
 
 void main() {
   group('BaseViewModel::', () {
@@ -29,7 +33,7 @@ void main() {
       final _testViewModel = softwareUnderTest as TestViewModel;
 
       // Execution
-      await _testViewModel.launch(null);
+      await _testViewModel.launch(MockNavigationHandler(), null);
 
       // Verification
       expect(_testViewModel._initExecuted, equals(true));
@@ -43,7 +47,7 @@ void main() {
       };
 
       // Execution
-      await softwareUnderTest.launch(_onViewModelLaunched);
+      await softwareUnderTest.launch(MockNavigationHandler(), _onViewModelLaunched);
 
       // Verification
       expect(_onViewModelLaunchedExecuted, equals(true));
@@ -102,7 +106,8 @@ void main() {
       expect(softwareUnderTest.error, isNull);
     });
 
-    test('If the task that is performed throws an error, the load operation does the same', () async {
+    test('If the task that is performed throws an error, the load operation does the same',
+        () async {
       // Setup
       final _expectedException = Exception();
 
@@ -113,7 +118,8 @@ void main() {
       await expectLater(loadOperation, throwsA(_expectedException));
     });
 
-    test('If the task that is performed throws an error, the viewModel instance reports it', () async {
+    test('If the task that is performed throws an error, the viewModel instance reports it',
+        () async {
       // Setup
       final _expectedException = Exception();
 
