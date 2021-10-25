@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:demo_books/api/api_serializer.dart';
 import 'package:demo_books/model/base_model.dart';
 import 'package:demo_books/util/constants.dart';
@@ -18,19 +20,34 @@ class ApiClient {
       ),
     );
     _client.interceptors.add(
+      InterceptorsWrapper(onResponse: (response, handler) {
+        final json = jsonDecode(response.data as String) as Map<String, dynamic>;
+        // Strip metadata
+        response.data = json['data'];
+        handler.next(response);
+      }),
+    );
+    _client.interceptors.add(
       InterceptorsWrapper(
         onResponse: (response, handler) {
-          assert(
-            response.data is Map<String, dynamic>,
-            'Received response is not a valid JSON',
-          );
-          if (response.requestOptions.extra['serializer'] is dynamic Function(Map<String, dynamic>)) {
-            final serializer = response.requestOptions.extra['serializer'] as dynamic Function(Map<String, dynamic>);
+          if (response.requestOptions.extra['serializer'] is dynamic Function(
+              Map<String, dynamic>)) {
+            assert(
+              response.data is Map<String, dynamic>,
+              'Received response is not a valid JSON',
+            );
+            final serializer = response.requestOptions.extra['serializer'] as dynamic Function(
+                Map<String, dynamic>);
             response.data = serializer.call(response.data as Map<String, dynamic>);
-          } else if (response.requestOptions.extra['serializer'] is dynamic Function(List<Map<String, dynamic>>)) {
-            final serializer =
-                response.requestOptions.extra['serializer'] as dynamic Function(List<Map<String, dynamic>>);
-            response.data = serializer.call(response.data as List<Map<String, dynamic>>);
+          } else if (response.requestOptions.extra['serializer'] is dynamic Function(
+              List<Map<String, dynamic>>)) {
+            assert(
+              response.data is List<dynamic>,
+              'Received response is not a valid JSON array',
+            );
+            final serializer = response.requestOptions.extra['serializer'] as dynamic Function(
+                List<Map<String, dynamic>>);
+            response.data = serializer.call((response.data as List).cast<Map<String, dynamic>>());
           }
           handler.next(response);
         },
@@ -45,7 +62,9 @@ class ApiClient {
     final response = await _client.get<List<T>>(
       url,
       options: Options(
-        extra: <String, dynamic>{'serializer': (List<Map<String, dynamic>> json) => _serializer.fromJsonArray<T>(json)},
+        extra: <String, dynamic>{
+          'serializer': (List<Map<String, dynamic>> json) => _serializer.fromJsonArray<T>(json)
+        },
       ),
     );
     if (response.data != null && response.data is List<T>) {
@@ -58,7 +77,9 @@ class ApiClient {
     final response = await _client.get<T>(
       url,
       options: Options(
-        extra: <String, dynamic>{'serializer': (Map<String, dynamic> json) => _serializer.fromJson<T>(json)},
+        extra: <String, dynamic>{
+          'serializer': (Map<String, dynamic> json) => _serializer.fromJson<T>(json)
+        },
       ),
     );
     if (response.data != null && response.data is T) {

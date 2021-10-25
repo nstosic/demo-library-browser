@@ -23,12 +23,12 @@ class _$BookAttributesTearOff {
 
   _BookAttributes call(
       {@JsonKey(name: 'title')
-          String? title,
+          required String title,
       @JsonKey(name: 'date_published')
       @StringToDateConverter()
-          DateTime? datePublished,
+          required DateTime datePublished,
       @JsonKey(name: 'isbn')
-          int? isbn}) {
+          required int isbn}) {
     return _BookAttributes(
       title: title,
       datePublished: datePublished,
@@ -47,12 +47,12 @@ const $BookAttributes = _$BookAttributesTearOff();
 /// @nodoc
 mixin _$BookAttributes {
   @JsonKey(name: 'title')
-  String? get title => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_published')
   @StringToDateConverter()
-  DateTime? get datePublished => throw _privateConstructorUsedError;
+  DateTime get datePublished => throw _privateConstructorUsedError;
   @JsonKey(name: 'isbn')
-  int? get isbn => throw _privateConstructorUsedError;
+  int get isbn => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -67,12 +67,12 @@ abstract class $BookAttributesCopyWith<$Res> {
       _$BookAttributesCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'title')
-          String? title,
+          String title,
       @JsonKey(name: 'date_published')
       @StringToDateConverter()
-          DateTime? datePublished,
+          DateTime datePublished,
       @JsonKey(name: 'isbn')
-          int? isbn});
+          int isbn});
 }
 
 /// @nodoc
@@ -94,15 +94,15 @@ class _$BookAttributesCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       datePublished: datePublished == freezed
           ? _value.datePublished
           : datePublished // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       isbn: isbn == freezed
           ? _value.isbn
           : isbn // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -116,12 +116,12 @@ abstract class _$BookAttributesCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'title')
-          String? title,
+          String title,
       @JsonKey(name: 'date_published')
       @StringToDateConverter()
-          DateTime? datePublished,
+          DateTime datePublished,
       @JsonKey(name: 'isbn')
-          int? isbn});
+          int isbn});
 }
 
 /// @nodoc
@@ -145,15 +145,15 @@ class __$BookAttributesCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       datePublished: datePublished == freezed
           ? _value.datePublished
           : datePublished // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       isbn: isbn == freezed
           ? _value.isbn
           : isbn // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -163,26 +163,26 @@ class __$BookAttributesCopyWithImpl<$Res>
 class _$_BookAttributes implements _BookAttributes {
   _$_BookAttributes(
       {@JsonKey(name: 'title')
-          this.title,
+          required this.title,
       @JsonKey(name: 'date_published')
       @StringToDateConverter()
-          this.datePublished,
+          required this.datePublished,
       @JsonKey(name: 'isbn')
-          this.isbn});
+          required this.isbn});
 
   factory _$_BookAttributes.fromJson(Map<String, dynamic> json) =>
       _$$_BookAttributesFromJson(json);
 
   @override
   @JsonKey(name: 'title')
-  final String? title;
+  final String title;
   @override
   @JsonKey(name: 'date_published')
   @StringToDateConverter()
-  final DateTime? datePublished;
+  final DateTime datePublished;
   @override
   @JsonKey(name: 'isbn')
-  final int? isbn;
+  final int isbn;
 
   @override
   String toString() {
@@ -217,26 +217,26 @@ class _$_BookAttributes implements _BookAttributes {
 abstract class _BookAttributes implements BookAttributes {
   factory _BookAttributes(
       {@JsonKey(name: 'title')
-          String? title,
+          required String title,
       @JsonKey(name: 'date_published')
       @StringToDateConverter()
-          DateTime? datePublished,
+          required DateTime datePublished,
       @JsonKey(name: 'isbn')
-          int? isbn}) = _$_BookAttributes;
+          required int isbn}) = _$_BookAttributes;
 
   factory _BookAttributes.fromJson(Map<String, dynamic> json) =
       _$_BookAttributes.fromJson;
 
   @override
   @JsonKey(name: 'title')
-  String? get title;
+  String get title;
   @override
   @JsonKey(name: 'date_published')
   @StringToDateConverter()
-  DateTime? get datePublished;
+  DateTime get datePublished;
   @override
   @JsonKey(name: 'isbn')
-  int? get isbn;
+  int get isbn;
   @override
   @JsonKey(ignore: true)
   _$BookAttributesCopyWith<_BookAttributes> get copyWith =>

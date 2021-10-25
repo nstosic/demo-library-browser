@@ -21,7 +21,7 @@ BookLinks _$BookLinksFromJson(Map<String, dynamic> json) {
 class _$BookLinksTearOff {
   const _$BookLinksTearOff();
 
-  _BookLinks call({@JsonKey(name: 'self') String? selfUrl}) {
+  _BookLinks call({@JsonKey(name: 'self') required String selfUrl}) {
     return _BookLinks(
       selfUrl: selfUrl,
     );
@@ -38,7 +38,7 @@ const $BookLinks = _$BookLinksTearOff();
 /// @nodoc
 mixin _$BookLinks {
   @JsonKey(name: 'self')
-  String? get selfUrl => throw _privateConstructorUsedError;
+  String get selfUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,7 +50,7 @@ mixin _$BookLinks {
 abstract class $BookLinksCopyWith<$Res> {
   factory $BookLinksCopyWith(BookLinks value, $Res Function(BookLinks) then) =
       _$BookLinksCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'self') String? selfUrl});
+  $Res call({@JsonKey(name: 'self') String selfUrl});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$BookLinksCopyWithImpl<$Res> implements $BookLinksCopyWith<$Res> {
       selfUrl: selfUrl == freezed
           ? _value.selfUrl
           : selfUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -80,7 +80,7 @@ abstract class _$BookLinksCopyWith<$Res> implements $BookLinksCopyWith<$Res> {
           _BookLinks value, $Res Function(_BookLinks) then) =
       __$BookLinksCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'self') String? selfUrl});
+  $Res call({@JsonKey(name: 'self') String selfUrl});
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class __$BookLinksCopyWithImpl<$Res> extends _$BookLinksCopyWithImpl<$Res>
       selfUrl: selfUrl == freezed
           ? _value.selfUrl
           : selfUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -108,14 +108,14 @@ class __$BookLinksCopyWithImpl<$Res> extends _$BookLinksCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BookLinks implements _BookLinks {
-  _$_BookLinks({@JsonKey(name: 'self') this.selfUrl});
+  _$_BookLinks({@JsonKey(name: 'self') required this.selfUrl});
 
   factory _$_BookLinks.fromJson(Map<String, dynamic> json) =>
       _$$_BookLinksFromJson(json);
 
   @override
   @JsonKey(name: 'self')
-  final String? selfUrl;
+  final String selfUrl;
 
   @override
   String toString() {
@@ -145,14 +145,15 @@ class _$_BookLinks implements _BookLinks {
 }
 
 abstract class _BookLinks implements BookLinks {
-  factory _BookLinks({@JsonKey(name: 'self') String? selfUrl}) = _$_BookLinks;
+  factory _BookLinks({@JsonKey(name: 'self') required String selfUrl}) =
+      _$_BookLinks;
 
   factory _BookLinks.fromJson(Map<String, dynamic> json) =
       _$_BookLinks.fromJson;
 
   @override
   @JsonKey(name: 'self')
-  String? get selfUrl;
+  String get selfUrl;
   @override
   @JsonKey(ignore: true)
   _$BookLinksCopyWith<_BookLinks> get copyWith =>

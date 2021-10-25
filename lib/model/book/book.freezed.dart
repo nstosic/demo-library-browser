@@ -22,10 +22,10 @@ class _$BookTearOff {
   const _$BookTearOff();
 
   _Book call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'attributes') BookAttributes? attributes,
-      @JsonKey(name: 'relationships') BookRelationships? relationships,
-      @JsonKey(name: 'links') BookLinks? links}) {
+      {@JsonKey(name: 'id') required String id,
+      @JsonKey(name: 'attributes') required BookAttributes attributes,
+      @JsonKey(name: 'relationships') required BookRelationships relationships,
+      @JsonKey(name: 'links') required BookLinks links}) {
     return _Book(
       id: id,
       attributes: attributes,
@@ -45,13 +45,13 @@ const $Book = _$BookTearOff();
 /// @nodoc
 mixin _$Book {
   @JsonKey(name: 'id')
-  int? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'attributes')
-  BookAttributes? get attributes => throw _privateConstructorUsedError;
+  BookAttributes get attributes => throw _privateConstructorUsedError;
   @JsonKey(name: 'relationships')
-  BookRelationships? get relationships => throw _privateConstructorUsedError;
+  BookRelationships get relationships => throw _privateConstructorUsedError;
   @JsonKey(name: 'links')
-  BookLinks? get links => throw _privateConstructorUsedError;
+  BookLinks get links => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,14 +63,14 @@ abstract class $BookCopyWith<$Res> {
   factory $BookCopyWith(Book value, $Res Function(Book) then) =
       _$BookCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'attributes') BookAttributes? attributes,
-      @JsonKey(name: 'relationships') BookRelationships? relationships,
-      @JsonKey(name: 'links') BookLinks? links});
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'attributes') BookAttributes attributes,
+      @JsonKey(name: 'relationships') BookRelationships relationships,
+      @JsonKey(name: 'links') BookLinks links});
 
-  $BookAttributesCopyWith<$Res>? get attributes;
-  $BookRelationshipsCopyWith<$Res>? get relationships;
-  $BookLinksCopyWith<$Res>? get links;
+  $BookAttributesCopyWith<$Res> get attributes;
+  $BookRelationshipsCopyWith<$Res> get relationships;
+  $BookLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
@@ -92,51 +92,39 @@ class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes?,
+              as BookAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships?,
+              as BookRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks?,
+              as BookLinks,
     ));
   }
 
   @override
-  $BookAttributesCopyWith<$Res>? get attributes {
-    if (_value.attributes == null) {
-      return null;
-    }
-
-    return $BookAttributesCopyWith<$Res>(_value.attributes!, (value) {
+  $BookAttributesCopyWith<$Res> get attributes {
+    return $BookAttributesCopyWith<$Res>(_value.attributes, (value) {
       return _then(_value.copyWith(attributes: value));
     });
   }
 
   @override
-  $BookRelationshipsCopyWith<$Res>? get relationships {
-    if (_value.relationships == null) {
-      return null;
-    }
-
-    return $BookRelationshipsCopyWith<$Res>(_value.relationships!, (value) {
+  $BookRelationshipsCopyWith<$Res> get relationships {
+    return $BookRelationshipsCopyWith<$Res>(_value.relationships, (value) {
       return _then(_value.copyWith(relationships: value));
     });
   }
 
   @override
-  $BookLinksCopyWith<$Res>? get links {
-    if (_value.links == null) {
-      return null;
-    }
-
-    return $BookLinksCopyWith<$Res>(_value.links!, (value) {
+  $BookLinksCopyWith<$Res> get links {
+    return $BookLinksCopyWith<$Res>(_value.links, (value) {
       return _then(_value.copyWith(links: value));
     });
   }
@@ -148,17 +136,17 @@ abstract class _$BookCopyWith<$Res> implements $BookCopyWith<$Res> {
       __$BookCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'attributes') BookAttributes? attributes,
-      @JsonKey(name: 'relationships') BookRelationships? relationships,
-      @JsonKey(name: 'links') BookLinks? links});
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'attributes') BookAttributes attributes,
+      @JsonKey(name: 'relationships') BookRelationships relationships,
+      @JsonKey(name: 'links') BookLinks links});
 
   @override
-  $BookAttributesCopyWith<$Res>? get attributes;
+  $BookAttributesCopyWith<$Res> get attributes;
   @override
-  $BookRelationshipsCopyWith<$Res>? get relationships;
+  $BookRelationshipsCopyWith<$Res> get relationships;
   @override
-  $BookLinksCopyWith<$Res>? get links;
+  $BookLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
@@ -181,19 +169,19 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes?,
+              as BookAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships?,
+              as BookRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks?,
+              as BookLinks,
     ));
   }
 }
@@ -202,25 +190,25 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Book implements _Book {
   _$_Book(
-      {@JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'attributes') this.attributes,
-      @JsonKey(name: 'relationships') this.relationships,
-      @JsonKey(name: 'links') this.links});
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'attributes') required this.attributes,
+      @JsonKey(name: 'relationships') required this.relationships,
+      @JsonKey(name: 'links') required this.links});
 
   factory _$_Book.fromJson(Map<String, dynamic> json) => _$$_BookFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final int? id;
+  final String id;
   @override
   @JsonKey(name: 'attributes')
-  final BookAttributes? attributes;
+  final BookAttributes attributes;
   @override
   @JsonKey(name: 'relationships')
-  final BookRelationships? relationships;
+  final BookRelationships relationships;
   @override
   @JsonKey(name: 'links')
-  final BookLinks? links;
+  final BookLinks links;
 
   @override
   String toString() {
@@ -257,25 +245,25 @@ class _$_Book implements _Book {
 
 abstract class _Book implements Book {
   factory _Book(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'attributes') BookAttributes? attributes,
-      @JsonKey(name: 'relationships') BookRelationships? relationships,
-      @JsonKey(name: 'links') BookLinks? links}) = _$_Book;
+      {@JsonKey(name: 'id') required String id,
+      @JsonKey(name: 'attributes') required BookAttributes attributes,
+      @JsonKey(name: 'relationships') required BookRelationships relationships,
+      @JsonKey(name: 'links') required BookLinks links}) = _$_Book;
 
   factory _Book.fromJson(Map<String, dynamic> json) = _$_Book.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  String get id;
   @override
   @JsonKey(name: 'attributes')
-  BookAttributes? get attributes;
+  BookAttributes get attributes;
   @override
   @JsonKey(name: 'relationships')
-  BookRelationships? get relationships;
+  BookRelationships get relationships;
   @override
   @JsonKey(name: 'links')
-  BookLinks? get links;
+  BookLinks get links;
   @override
   @JsonKey(ignore: true)
   _$BookCopyWith<_Book> get copyWith => throw _privateConstructorUsedError;

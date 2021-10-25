@@ -8,9 +8,9 @@ part 'book_attributes.g.dart';
 @freezed
 class BookAttributes extends BaseModel with _$BookAttributes {
   factory BookAttributes({
-    @JsonKey(name: 'title') String? title,
-    @JsonKey(name: 'date_published') @StringToDateConverter() DateTime? datePublished,
-    @JsonKey(name: 'isbn') int? isbn,
+    @JsonKey(name: 'title') required String title,
+    @JsonKey(name: 'date_published') @StringToDateConverter() required DateTime datePublished,
+    @JsonKey(name: 'isbn') required int isbn,
   }) = _BookAttributes;
 
   factory BookAttributes.fromJson(Map<String, dynamic> json) => _$BookAttributesFromJson(json);

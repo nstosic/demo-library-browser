@@ -1,9 +1,10 @@
 import 'package:demo_books/api/api_client.dart';
 import 'package:demo_books/model/book/book.dart';
-import 'package:demo_books/model/book/book_links.dart';
 import 'package:demo_books/repo/books_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+
+import '../test_helper.dart';
 
 class MockApiClient extends Mock implements ApiClient {}
 
@@ -17,7 +18,7 @@ void main() {
       when(() => mockApiClient.getRemoteCollection<Book>(url: any(named: 'url')))
           .thenAnswer((_) => Future.value([]));
       when(() => mockApiClient.getRemoteDocument<Book>(url: any(named: 'url')))
-          .thenAnswer((_) => Future.value(Book(id: 1)));
+          .thenAnswer((_) => Future.value(TestHelper.testBook));
       softwareUnderTest = BooksRepository(mockApiClient);
     });
 
@@ -34,16 +35,13 @@ void main() {
 
     test('fetchBook targets the correct url', () async {
       // Setup
-      final testBook = Book(
-        id: 1,
-        links: BookLinks(selfUrl: '/testUrl'),
-      );
 
       // Execution
-      await softwareUnderTest.fetchBook(testBook);
+      await softwareUnderTest.fetchBook(TestHelper.testBook);
 
       // Verification
-      verify(() => mockApiClient.getRemoteDocument<Book>(url: testBook.links!.selfUrl!)).called(1);
+      verify(() => mockApiClient.getRemoteDocument<Book>(url: TestHelper.testBook.links.selfUrl))
+          .called(1);
     });
   });
 }

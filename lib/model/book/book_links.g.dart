@@ -7,7 +7,7 @@ part of 'book_links.dart';
 // **************************************************************************
 
 _$_BookLinks _$$_BookLinksFromJson(Map<String, dynamic> json) => _$_BookLinks(
-      selfUrl: json['self'] as String?,
+      selfUrl: json['self'] as String,
     );
 
 Map<String, dynamic> _$$_BookLinksToJson(_$_BookLinks instance) =>

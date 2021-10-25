@@ -9,8 +9,9 @@ part 'one_to_many_relationship.g.dart';
 @freezed
 class OneToManyRelationship extends BaseModel with _$OneToManyRelationship {
   factory OneToManyRelationship({
-    @JsonKey(name: 'data') @ListRelationshipConverter() List<RelationshipData>? data,
+    @JsonKey(name: 'data') @ListRelationshipConverter() required List<RelationshipData> data,
   }) = _OneToManyRelationship;
 
-  factory OneToManyRelationship.fromJson(Map<String, dynamic> json) => _$OneToManyRelationshipFromJson(json);
+  factory OneToManyRelationship.fromJson(Map<String, dynamic> json) =>
+      _$OneToManyRelationshipFromJson(json);
 }

@@ -11,12 +11,14 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
     required this.viewModel,
     this.child,
     this.onViewModelReady,
+    this.showLoadingState = true,
     Key? key,
   }) : super(key: key);
 
   final _ViewModelBuilder<T> builder;
   final Widget? child;
   final void Function(T)? onViewModelReady;
+  final bool showLoadingState;
   final T viewModel;
 
   @override
@@ -45,7 +47,7 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
                   child,
                 ),
               ),
-              if (widget.viewModel.busy) ...{
+              if (widget.showLoadingState && widget.viewModel.busy) ...{
                 Positioned.fill(
                   child: Container(
                     color: Colors.black54,

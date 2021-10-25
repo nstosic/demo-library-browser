@@ -7,7 +7,7 @@ part 'book_links.g.dart';
 @freezed
 class BookLinks extends BaseModel with _$BookLinks {
   factory BookLinks({
-    @JsonKey(name: 'self') String? selfUrl,
+    @JsonKey(name: 'self') required String selfUrl,
   }) = _BookLinks;
 
   factory BookLinks.fromJson(Map<String, dynamic> json) => _$BookLinksFromJson(json);

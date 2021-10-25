@@ -18,7 +18,7 @@ class BooksRepository {
   }
 
   Future<Book> fetchBook(Book book) async {
-    final response = _apiClient.getRemoteDocument<Book>(url: book.links!.selfUrl!);
+    final response = _apiClient.getRemoteDocument<Book>(url: book.links.selfUrl);
     return response;
   }
 }

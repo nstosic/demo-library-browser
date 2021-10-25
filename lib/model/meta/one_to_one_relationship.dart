@@ -12,5 +12,6 @@ class OneToOneRelationship extends BaseModel with _$OneToOneRelationship {
     @JsonKey(name: 'data') @RelationshipConverter() required RelationshipData data,
   }) = _OneToOneRelationship;
 
-  factory OneToOneRelationship.fromJson(Map<String, dynamic> json) => _$OneToOneRelationshipFromJson(json);
+  factory OneToOneRelationship.fromJson(Map<String, dynamic> json) =>
+      _$OneToOneRelationshipFromJson(json);
 }
