@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:demo_books/ui/navigation/navigation_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
@@ -20,6 +21,11 @@ abstract class BaseViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  late NavigationHandler _navigation;
+  @protected
+  @visibleForTesting
+  NavigationHandler get navigation => _navigation;
+
   Future<T> load<T>(Future<T> Function() task) async {
     busy = true;
     try {
@@ -34,11 +40,15 @@ abstract class BaseViewModel extends ChangeNotifier {
   }
 
   @nonVirtual
-  Future<void> launch<T extends BaseViewModel>(void Function(T)? onViewModelLaunched) async {
+  Future<void> launch<T extends BaseViewModel>(
+    NavigationHandler navigationHandler,
+    void Function(T)? onViewModelLaunched,
+  ) async {
     assert(
       this is T,
       'Illegal type override. Only callbacks of ${this.runtimeType} can be invoked for this instance of BaseViewModel',
     );
+    this._navigation = navigationHandler;
     await init();
     onViewModelLaunched?.call(this as T);
   }

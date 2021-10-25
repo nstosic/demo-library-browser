@@ -1,5 +1,6 @@
 import 'package:demo_books/base/base_viewmodel.dart';
 import 'package:demo_books/ui/common/loading_state_wrapper.dart';
+import 'package:demo_books/ui/navigation/navigation_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,10 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
   @override
   void initState() {
     super.initState();
-    widget.viewModel.launch(widget.onViewModelReady);
+    widget.viewModel.launch(
+      NavigationHandler(context),
+      widget.onViewModelReady,
+    );
   }
 
   @override
