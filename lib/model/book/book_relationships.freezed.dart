@@ -22,11 +22,21 @@ class _$BookRelationshipsTearOff {
   const _$BookRelationshipsTearOff();
 
   _BookRelationships call(
-      {@JsonKey(name: 'author') required OneToOneRelationship author,
-      @JsonKey(name: 'chapters') required OneToManyRelationship chapters,
-      @JsonKey(name: 'photos') required OneToManyRelationship photos,
-      @JsonKey(name: 'series') required OneToOneRelationship series,
-      @JsonKey(name: 'stores') required OneToManyRelationship stores}) {
+      {@JsonKey(name: 'author')
+      @OneToOneRelationshipConverter()
+          required OneToOneRelationship author,
+      @JsonKey(name: 'chapters')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship chapters,
+      @JsonKey(name: 'photos')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship photos,
+      @JsonKey(name: 'series')
+      @OneToOneRelationshipConverter()
+          required OneToOneRelationship series,
+      @JsonKey(name: 'stores')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship stores}) {
     return _BookRelationships(
       author: author,
       chapters: chapters,
@@ -47,14 +57,19 @@ const $BookRelationships = _$BookRelationshipsTearOff();
 /// @nodoc
 mixin _$BookRelationships {
   @JsonKey(name: 'author')
+  @OneToOneRelationshipConverter()
   OneToOneRelationship get author => throw _privateConstructorUsedError;
   @JsonKey(name: 'chapters')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get chapters => throw _privateConstructorUsedError;
   @JsonKey(name: 'photos')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get photos => throw _privateConstructorUsedError;
   @JsonKey(name: 'series')
+  @OneToOneRelationshipConverter()
   OneToOneRelationship get series => throw _privateConstructorUsedError;
   @JsonKey(name: 'stores')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get stores => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -69,11 +84,21 @@ abstract class $BookRelationshipsCopyWith<$Res> {
           BookRelationships value, $Res Function(BookRelationships) then) =
       _$BookRelationshipsCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'author') OneToOneRelationship author,
-      @JsonKey(name: 'chapters') OneToManyRelationship chapters,
-      @JsonKey(name: 'photos') OneToManyRelationship photos,
-      @JsonKey(name: 'series') OneToOneRelationship series,
-      @JsonKey(name: 'stores') OneToManyRelationship stores});
+      {@JsonKey(name: 'author')
+      @OneToOneRelationshipConverter()
+          OneToOneRelationship author,
+      @JsonKey(name: 'chapters')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship chapters,
+      @JsonKey(name: 'photos')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship photos,
+      @JsonKey(name: 'series')
+      @OneToOneRelationshipConverter()
+          OneToOneRelationship series,
+      @JsonKey(name: 'stores')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship stores});
 
   $OneToOneRelationshipCopyWith<$Res> get author;
   $OneToManyRelationshipCopyWith<$Res> get chapters;
@@ -167,11 +192,21 @@ abstract class _$BookRelationshipsCopyWith<$Res>
       __$BookRelationshipsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'author') OneToOneRelationship author,
-      @JsonKey(name: 'chapters') OneToManyRelationship chapters,
-      @JsonKey(name: 'photos') OneToManyRelationship photos,
-      @JsonKey(name: 'series') OneToOneRelationship series,
-      @JsonKey(name: 'stores') OneToManyRelationship stores});
+      {@JsonKey(name: 'author')
+      @OneToOneRelationshipConverter()
+          OneToOneRelationship author,
+      @JsonKey(name: 'chapters')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship chapters,
+      @JsonKey(name: 'photos')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship photos,
+      @JsonKey(name: 'series')
+      @OneToOneRelationshipConverter()
+          OneToOneRelationship series,
+      @JsonKey(name: 'stores')
+      @OneToManyRelationshipConverter()
+          OneToManyRelationship stores});
 
   @override
   $OneToOneRelationshipCopyWith<$Res> get author;
@@ -233,29 +268,44 @@ class __$BookRelationshipsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BookRelationships implements _BookRelationships {
   _$_BookRelationships(
-      {@JsonKey(name: 'author') required this.author,
-      @JsonKey(name: 'chapters') required this.chapters,
-      @JsonKey(name: 'photos') required this.photos,
-      @JsonKey(name: 'series') required this.series,
-      @JsonKey(name: 'stores') required this.stores});
+      {@JsonKey(name: 'author')
+      @OneToOneRelationshipConverter()
+          required this.author,
+      @JsonKey(name: 'chapters')
+      @OneToManyRelationshipConverter()
+          required this.chapters,
+      @JsonKey(name: 'photos')
+      @OneToManyRelationshipConverter()
+          required this.photos,
+      @JsonKey(name: 'series')
+      @OneToOneRelationshipConverter()
+          required this.series,
+      @JsonKey(name: 'stores')
+      @OneToManyRelationshipConverter()
+          required this.stores});
 
   factory _$_BookRelationships.fromJson(Map<String, dynamic> json) =>
       _$$_BookRelationshipsFromJson(json);
 
   @override
   @JsonKey(name: 'author')
+  @OneToOneRelationshipConverter()
   final OneToOneRelationship author;
   @override
   @JsonKey(name: 'chapters')
+  @OneToManyRelationshipConverter()
   final OneToManyRelationship chapters;
   @override
   @JsonKey(name: 'photos')
+  @OneToManyRelationshipConverter()
   final OneToManyRelationship photos;
   @override
   @JsonKey(name: 'series')
+  @OneToOneRelationshipConverter()
   final OneToOneRelationship series;
   @override
   @JsonKey(name: 'stores')
+  @OneToManyRelationshipConverter()
   final OneToManyRelationship stores;
 
   @override
@@ -293,30 +343,44 @@ class _$_BookRelationships implements _BookRelationships {
 
 abstract class _BookRelationships implements BookRelationships {
   factory _BookRelationships(
-          {@JsonKey(name: 'author') required OneToOneRelationship author,
-          @JsonKey(name: 'chapters') required OneToManyRelationship chapters,
-          @JsonKey(name: 'photos') required OneToManyRelationship photos,
-          @JsonKey(name: 'series') required OneToOneRelationship series,
-          @JsonKey(name: 'stores') required OneToManyRelationship stores}) =
-      _$_BookRelationships;
+      {@JsonKey(name: 'author')
+      @OneToOneRelationshipConverter()
+          required OneToOneRelationship author,
+      @JsonKey(name: 'chapters')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship chapters,
+      @JsonKey(name: 'photos')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship photos,
+      @JsonKey(name: 'series')
+      @OneToOneRelationshipConverter()
+          required OneToOneRelationship series,
+      @JsonKey(name: 'stores')
+      @OneToManyRelationshipConverter()
+          required OneToManyRelationship stores}) = _$_BookRelationships;
 
   factory _BookRelationships.fromJson(Map<String, dynamic> json) =
       _$_BookRelationships.fromJson;
 
   @override
   @JsonKey(name: 'author')
+  @OneToOneRelationshipConverter()
   OneToOneRelationship get author;
   @override
   @JsonKey(name: 'chapters')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get chapters;
   @override
   @JsonKey(name: 'photos')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get photos;
   @override
   @JsonKey(name: 'series')
+  @OneToOneRelationshipConverter()
   OneToOneRelationship get series;
   @override
   @JsonKey(name: 'stores')
+  @OneToManyRelationshipConverter()
   OneToManyRelationship get stores;
   @override
   @JsonKey(ignore: true)
