@@ -25,6 +25,6 @@ class FilterStrategy {
 
   @override
   String toString() {
-    return '[$field][${describeEnum(operator).substring(3)}]=$value';
+    return 'filter[$field][${describeEnum(operator).substring(3)}]=$value';
   }
 }
