@@ -8,16 +8,18 @@ part of 'book.dart';
 
 _$_Book _$$_BookFromJson(Map<String, dynamic> json) => _$_Book(
       id: json['id'] as String,
-      attributes:
-          BookAttributes.fromJson(json['attributes'] as Map<String, dynamic>),
-      relationships: BookRelationships.fromJson(
-          json['relationships'] as Map<String, dynamic>),
-      links: BookLinks.fromJson(json['links'] as Map<String, dynamic>),
+      attributes: const BookAttributesConverter()
+          .fromJson(json['attributes'] as Map<String, dynamic>),
+      relationships: const BookRelationshipsConverter()
+          .fromJson(json['relationships'] as Map<String, dynamic>),
+      links: const BookLinksConverter()
+          .fromJson(json['links'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_BookToJson(_$_Book instance) => <String, dynamic>{
       'id': instance.id,
-      'attributes': instance.attributes,
-      'relationships': instance.relationships,
-      'links': instance.links,
+      'attributes': const BookAttributesConverter().toJson(instance.attributes),
+      'relationships':
+          const BookRelationshipsConverter().toJson(instance.relationships),
+      'links': const BookLinksConverter().toJson(instance.links),
     };

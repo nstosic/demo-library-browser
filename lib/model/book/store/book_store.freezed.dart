@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'book.dart';
+part of 'book_store.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,27 +13,27 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Book _$BookFromJson(Map<String, dynamic> json) {
-  return _Book.fromJson(json);
+BookStore _$BookStoreFromJson(Map<String, dynamic> json) {
+  return _BookStore.fromJson(json);
 }
 
 /// @nodoc
-class _$BookTearOff {
-  const _$BookTearOff();
+class _$BookStoreTearOff {
+  const _$BookStoreTearOff();
 
-  _Book call(
+  _BookStore call(
       {@JsonKey(name: 'id')
           required String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          required BookAttributes attributes,
+      @BookStoreAttributesConverter()
+          required BookStoreAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          required BookRelationships relationships,
+      @BookStoreRelationshipsConverter()
+          required BookStoreRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          required BookLinks links}) {
-    return _Book(
+      @BookStoreLinksConverter()
+          required BookStoreLinks links}) {
+    return _BookStore(
       id: id,
       attributes: attributes,
       relationships: relationships,
@@ -41,62 +41,64 @@ class _$BookTearOff {
     );
   }
 
-  Book fromJson(Map<String, Object?> json) {
-    return Book.fromJson(json);
+  BookStore fromJson(Map<String, Object?> json) {
+    return BookStore.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Book = _$BookTearOff();
+const $BookStore = _$BookStoreTearOff();
 
 /// @nodoc
-mixin _$Book {
+mixin _$BookStore {
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  BookAttributes get attributes => throw _privateConstructorUsedError;
+  @BookStoreAttributesConverter()
+  BookStoreAttributes get attributes => throw _privateConstructorUsedError;
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  BookRelationships get relationships => throw _privateConstructorUsedError;
+  @BookStoreRelationshipsConverter()
+  BookStoreRelationships get relationships =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  BookLinks get links => throw _privateConstructorUsedError;
+  @BookStoreLinksConverter()
+  BookStoreLinks get links => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BookCopyWith<Book> get copyWith => throw _privateConstructorUsedError;
+  $BookStoreCopyWith<BookStore> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookCopyWith<$Res> {
-  factory $BookCopyWith(Book value, $Res Function(Book) then) =
-      _$BookCopyWithImpl<$Res>;
+abstract class $BookStoreCopyWith<$Res> {
+  factory $BookStoreCopyWith(BookStore value, $Res Function(BookStore) then) =
+      _$BookStoreCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id')
           String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          BookAttributes attributes,
+      @BookStoreAttributesConverter()
+          BookStoreAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          BookRelationships relationships,
+      @BookStoreRelationshipsConverter()
+          BookStoreRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          BookLinks links});
+      @BookStoreLinksConverter()
+          BookStoreLinks links});
 
-  $BookAttributesCopyWith<$Res> get attributes;
-  $BookRelationshipsCopyWith<$Res> get relationships;
-  $BookLinksCopyWith<$Res> get links;
+  $BookStoreAttributesCopyWith<$Res> get attributes;
+  $BookStoreRelationshipsCopyWith<$Res> get relationships;
+  $BookStoreLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
-class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
-  _$BookCopyWithImpl(this._value, this._then);
+class _$BookStoreCopyWithImpl<$Res> implements $BookStoreCopyWith<$Res> {
+  _$BookStoreCopyWithImpl(this._value, this._then);
 
-  final Book _value;
+  final BookStore _value;
   // ignore: unused_field
-  final $Res Function(Book) _then;
+  final $Res Function(BookStore) _then;
 
   @override
   $Res call({
@@ -113,74 +115,75 @@ class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes,
+              as BookStoreAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships,
+              as BookStoreRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks,
+              as BookStoreLinks,
     ));
   }
 
   @override
-  $BookAttributesCopyWith<$Res> get attributes {
-    return $BookAttributesCopyWith<$Res>(_value.attributes, (value) {
+  $BookStoreAttributesCopyWith<$Res> get attributes {
+    return $BookStoreAttributesCopyWith<$Res>(_value.attributes, (value) {
       return _then(_value.copyWith(attributes: value));
     });
   }
 
   @override
-  $BookRelationshipsCopyWith<$Res> get relationships {
-    return $BookRelationshipsCopyWith<$Res>(_value.relationships, (value) {
+  $BookStoreRelationshipsCopyWith<$Res> get relationships {
+    return $BookStoreRelationshipsCopyWith<$Res>(_value.relationships, (value) {
       return _then(_value.copyWith(relationships: value));
     });
   }
 
   @override
-  $BookLinksCopyWith<$Res> get links {
-    return $BookLinksCopyWith<$Res>(_value.links, (value) {
+  $BookStoreLinksCopyWith<$Res> get links {
+    return $BookStoreLinksCopyWith<$Res>(_value.links, (value) {
       return _then(_value.copyWith(links: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$BookCopyWith<$Res> implements $BookCopyWith<$Res> {
-  factory _$BookCopyWith(_Book value, $Res Function(_Book) then) =
-      __$BookCopyWithImpl<$Res>;
+abstract class _$BookStoreCopyWith<$Res> implements $BookStoreCopyWith<$Res> {
+  factory _$BookStoreCopyWith(
+          _BookStore value, $Res Function(_BookStore) then) =
+      __$BookStoreCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id')
           String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          BookAttributes attributes,
+      @BookStoreAttributesConverter()
+          BookStoreAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          BookRelationships relationships,
+      @BookStoreRelationshipsConverter()
+          BookStoreRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          BookLinks links});
+      @BookStoreLinksConverter()
+          BookStoreLinks links});
 
   @override
-  $BookAttributesCopyWith<$Res> get attributes;
+  $BookStoreAttributesCopyWith<$Res> get attributes;
   @override
-  $BookRelationshipsCopyWith<$Res> get relationships;
+  $BookStoreRelationshipsCopyWith<$Res> get relationships;
   @override
-  $BookLinksCopyWith<$Res> get links;
+  $BookStoreLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
-class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
-    implements _$BookCopyWith<$Res> {
-  __$BookCopyWithImpl(_Book _value, $Res Function(_Book) _then)
-      : super(_value, (v) => _then(v as _Book));
+class __$BookStoreCopyWithImpl<$Res> extends _$BookStoreCopyWithImpl<$Res>
+    implements _$BookStoreCopyWith<$Res> {
+  __$BookStoreCopyWithImpl(_BookStore _value, $Res Function(_BookStore) _then)
+      : super(_value, (v) => _then(v as _BookStore));
 
   @override
-  _Book get _value => super._value as _Book;
+  _BookStore get _value => super._value as _BookStore;
 
   @override
   $Res call({
@@ -189,7 +192,7 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
     Object? relationships = freezed,
     Object? links = freezed,
   }) {
-    return _then(_Book(
+    return _then(_BookStore(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,63 +200,64 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes,
+              as BookStoreAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships,
+              as BookStoreRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks,
+              as BookStoreLinks,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Book implements _Book {
-  _$_Book(
+class _$_BookStore implements _BookStore {
+  _$_BookStore(
       {@JsonKey(name: 'id')
           required this.id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
+      @BookStoreAttributesConverter()
           required this.attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
+      @BookStoreRelationshipsConverter()
           required this.relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
+      @BookStoreLinksConverter()
           required this.links});
 
-  factory _$_Book.fromJson(Map<String, dynamic> json) => _$$_BookFromJson(json);
+  factory _$_BookStore.fromJson(Map<String, dynamic> json) =>
+      _$$_BookStoreFromJson(json);
 
   @override
   @JsonKey(name: 'id')
   final String id;
   @override
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  final BookAttributes attributes;
+  @BookStoreAttributesConverter()
+  final BookStoreAttributes attributes;
   @override
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  final BookRelationships relationships;
+  @BookStoreRelationshipsConverter()
+  final BookStoreRelationships relationships;
   @override
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  final BookLinks links;
+  @BookStoreLinksConverter()
+  final BookStoreLinks links;
 
   @override
   String toString() {
-    return 'Book(id: $id, attributes: $attributes, relationships: $relationships, links: $links)';
+    return 'BookStore(id: $id, attributes: $attributes, relationships: $relationships, links: $links)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Book &&
+            other is _BookStore &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.attributes, attributes) ||
                 other.attributes == attributes) &&
@@ -268,47 +272,49 @@ class _$_Book implements _Book {
 
   @JsonKey(ignore: true)
   @override
-  _$BookCopyWith<_Book> get copyWith =>
-      __$BookCopyWithImpl<_Book>(this, _$identity);
+  _$BookStoreCopyWith<_BookStore> get copyWith =>
+      __$BookStoreCopyWithImpl<_BookStore>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BookToJson(this);
+    return _$$_BookStoreToJson(this);
   }
 }
 
-abstract class _Book implements Book {
-  factory _Book(
+abstract class _BookStore implements BookStore {
+  factory _BookStore(
       {@JsonKey(name: 'id')
           required String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          required BookAttributes attributes,
+      @BookStoreAttributesConverter()
+          required BookStoreAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          required BookRelationships relationships,
+      @BookStoreRelationshipsConverter()
+          required BookStoreRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          required BookLinks links}) = _$_Book;
+      @BookStoreLinksConverter()
+          required BookStoreLinks links}) = _$_BookStore;
 
-  factory _Book.fromJson(Map<String, dynamic> json) = _$_Book.fromJson;
+  factory _BookStore.fromJson(Map<String, dynamic> json) =
+      _$_BookStore.fromJson;
 
   @override
   @JsonKey(name: 'id')
   String get id;
   @override
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  BookAttributes get attributes;
+  @BookStoreAttributesConverter()
+  BookStoreAttributes get attributes;
   @override
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  BookRelationships get relationships;
+  @BookStoreRelationshipsConverter()
+  BookStoreRelationships get relationships;
   @override
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  BookLinks get links;
+  @BookStoreLinksConverter()
+  BookStoreLinks get links;
   @override
   @JsonKey(ignore: true)
-  _$BookCopyWith<_Book> get copyWith => throw _privateConstructorUsedError;
+  _$BookStoreCopyWith<_BookStore> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'book.dart';
+part of 'book_author.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,27 +13,27 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Book _$BookFromJson(Map<String, dynamic> json) {
-  return _Book.fromJson(json);
+BookAuthor _$BookAuthorFromJson(Map<String, dynamic> json) {
+  return _BookAuthor.fromJson(json);
 }
 
 /// @nodoc
-class _$BookTearOff {
-  const _$BookTearOff();
+class _$BookAuthorTearOff {
+  const _$BookAuthorTearOff();
 
-  _Book call(
+  _BookAuthor call(
       {@JsonKey(name: 'id')
           required String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          required BookAttributes attributes,
+      @BookAuthorAttributesConverter()
+          required BookAuthorAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          required BookRelationships relationships,
+      @BookAuthorRelationshipsConverter()
+          required BookAuthorRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          required BookLinks links}) {
-    return _Book(
+      @BookAuthorLinksConverter()
+          required BookAuthorLinks links}) {
+    return _BookAuthor(
       id: id,
       attributes: attributes,
       relationships: relationships,
@@ -41,62 +41,65 @@ class _$BookTearOff {
     );
   }
 
-  Book fromJson(Map<String, Object?> json) {
-    return Book.fromJson(json);
+  BookAuthor fromJson(Map<String, Object?> json) {
+    return BookAuthor.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Book = _$BookTearOff();
+const $BookAuthor = _$BookAuthorTearOff();
 
 /// @nodoc
-mixin _$Book {
+mixin _$BookAuthor {
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  BookAttributes get attributes => throw _privateConstructorUsedError;
+  @BookAuthorAttributesConverter()
+  BookAuthorAttributes get attributes => throw _privateConstructorUsedError;
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  BookRelationships get relationships => throw _privateConstructorUsedError;
+  @BookAuthorRelationshipsConverter()
+  BookAuthorRelationships get relationships =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  BookLinks get links => throw _privateConstructorUsedError;
+  @BookAuthorLinksConverter()
+  BookAuthorLinks get links => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BookCopyWith<Book> get copyWith => throw _privateConstructorUsedError;
+  $BookAuthorCopyWith<BookAuthor> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookCopyWith<$Res> {
-  factory $BookCopyWith(Book value, $Res Function(Book) then) =
-      _$BookCopyWithImpl<$Res>;
+abstract class $BookAuthorCopyWith<$Res> {
+  factory $BookAuthorCopyWith(
+          BookAuthor value, $Res Function(BookAuthor) then) =
+      _$BookAuthorCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id')
           String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          BookAttributes attributes,
+      @BookAuthorAttributesConverter()
+          BookAuthorAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          BookRelationships relationships,
+      @BookAuthorRelationshipsConverter()
+          BookAuthorRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          BookLinks links});
+      @BookAuthorLinksConverter()
+          BookAuthorLinks links});
 
-  $BookAttributesCopyWith<$Res> get attributes;
-  $BookRelationshipsCopyWith<$Res> get relationships;
-  $BookLinksCopyWith<$Res> get links;
+  $BookAuthorAttributesCopyWith<$Res> get attributes;
+  $BookAuthorRelationshipsCopyWith<$Res> get relationships;
+  $BookAuthorLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
-class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
-  _$BookCopyWithImpl(this._value, this._then);
+class _$BookAuthorCopyWithImpl<$Res> implements $BookAuthorCopyWith<$Res> {
+  _$BookAuthorCopyWithImpl(this._value, this._then);
 
-  final Book _value;
+  final BookAuthor _value;
   // ignore: unused_field
-  final $Res Function(Book) _then;
+  final $Res Function(BookAuthor) _then;
 
   @override
   $Res call({
@@ -113,74 +116,77 @@ class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes,
+              as BookAuthorAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships,
+              as BookAuthorRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks,
+              as BookAuthorLinks,
     ));
   }
 
   @override
-  $BookAttributesCopyWith<$Res> get attributes {
-    return $BookAttributesCopyWith<$Res>(_value.attributes, (value) {
+  $BookAuthorAttributesCopyWith<$Res> get attributes {
+    return $BookAuthorAttributesCopyWith<$Res>(_value.attributes, (value) {
       return _then(_value.copyWith(attributes: value));
     });
   }
 
   @override
-  $BookRelationshipsCopyWith<$Res> get relationships {
-    return $BookRelationshipsCopyWith<$Res>(_value.relationships, (value) {
+  $BookAuthorRelationshipsCopyWith<$Res> get relationships {
+    return $BookAuthorRelationshipsCopyWith<$Res>(_value.relationships,
+        (value) {
       return _then(_value.copyWith(relationships: value));
     });
   }
 
   @override
-  $BookLinksCopyWith<$Res> get links {
-    return $BookLinksCopyWith<$Res>(_value.links, (value) {
+  $BookAuthorLinksCopyWith<$Res> get links {
+    return $BookAuthorLinksCopyWith<$Res>(_value.links, (value) {
       return _then(_value.copyWith(links: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$BookCopyWith<$Res> implements $BookCopyWith<$Res> {
-  factory _$BookCopyWith(_Book value, $Res Function(_Book) then) =
-      __$BookCopyWithImpl<$Res>;
+abstract class _$BookAuthorCopyWith<$Res> implements $BookAuthorCopyWith<$Res> {
+  factory _$BookAuthorCopyWith(
+          _BookAuthor value, $Res Function(_BookAuthor) then) =
+      __$BookAuthorCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id')
           String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          BookAttributes attributes,
+      @BookAuthorAttributesConverter()
+          BookAuthorAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          BookRelationships relationships,
+      @BookAuthorRelationshipsConverter()
+          BookAuthorRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          BookLinks links});
+      @BookAuthorLinksConverter()
+          BookAuthorLinks links});
 
   @override
-  $BookAttributesCopyWith<$Res> get attributes;
+  $BookAuthorAttributesCopyWith<$Res> get attributes;
   @override
-  $BookRelationshipsCopyWith<$Res> get relationships;
+  $BookAuthorRelationshipsCopyWith<$Res> get relationships;
   @override
-  $BookLinksCopyWith<$Res> get links;
+  $BookAuthorLinksCopyWith<$Res> get links;
 }
 
 /// @nodoc
-class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
-    implements _$BookCopyWith<$Res> {
-  __$BookCopyWithImpl(_Book _value, $Res Function(_Book) _then)
-      : super(_value, (v) => _then(v as _Book));
+class __$BookAuthorCopyWithImpl<$Res> extends _$BookAuthorCopyWithImpl<$Res>
+    implements _$BookAuthorCopyWith<$Res> {
+  __$BookAuthorCopyWithImpl(
+      _BookAuthor _value, $Res Function(_BookAuthor) _then)
+      : super(_value, (v) => _then(v as _BookAuthor));
 
   @override
-  _Book get _value => super._value as _Book;
+  _BookAuthor get _value => super._value as _BookAuthor;
 
   @override
   $Res call({
@@ -189,7 +195,7 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
     Object? relationships = freezed,
     Object? links = freezed,
   }) {
-    return _then(_Book(
+    return _then(_BookAuthor(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,63 +203,64 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
-              as BookAttributes,
+              as BookAuthorAttributes,
       relationships: relationships == freezed
           ? _value.relationships
           : relationships // ignore: cast_nullable_to_non_nullable
-              as BookRelationships,
+              as BookAuthorRelationships,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as BookLinks,
+              as BookAuthorLinks,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Book implements _Book {
-  _$_Book(
+class _$_BookAuthor implements _BookAuthor {
+  _$_BookAuthor(
       {@JsonKey(name: 'id')
           required this.id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
+      @BookAuthorAttributesConverter()
           required this.attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
+      @BookAuthorRelationshipsConverter()
           required this.relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
+      @BookAuthorLinksConverter()
           required this.links});
 
-  factory _$_Book.fromJson(Map<String, dynamic> json) => _$$_BookFromJson(json);
+  factory _$_BookAuthor.fromJson(Map<String, dynamic> json) =>
+      _$$_BookAuthorFromJson(json);
 
   @override
   @JsonKey(name: 'id')
   final String id;
   @override
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  final BookAttributes attributes;
+  @BookAuthorAttributesConverter()
+  final BookAuthorAttributes attributes;
   @override
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  final BookRelationships relationships;
+  @BookAuthorRelationshipsConverter()
+  final BookAuthorRelationships relationships;
   @override
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  final BookLinks links;
+  @BookAuthorLinksConverter()
+  final BookAuthorLinks links;
 
   @override
   String toString() {
-    return 'Book(id: $id, attributes: $attributes, relationships: $relationships, links: $links)';
+    return 'BookAuthor(id: $id, attributes: $attributes, relationships: $relationships, links: $links)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Book &&
+            other is _BookAuthor &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.attributes, attributes) ||
                 other.attributes == attributes) &&
@@ -268,47 +275,49 @@ class _$_Book implements _Book {
 
   @JsonKey(ignore: true)
   @override
-  _$BookCopyWith<_Book> get copyWith =>
-      __$BookCopyWithImpl<_Book>(this, _$identity);
+  _$BookAuthorCopyWith<_BookAuthor> get copyWith =>
+      __$BookAuthorCopyWithImpl<_BookAuthor>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BookToJson(this);
+    return _$$_BookAuthorToJson(this);
   }
 }
 
-abstract class _Book implements Book {
-  factory _Book(
+abstract class _BookAuthor implements BookAuthor {
+  factory _BookAuthor(
       {@JsonKey(name: 'id')
           required String id,
       @JsonKey(name: 'attributes')
-      @BookAttributesConverter()
-          required BookAttributes attributes,
+      @BookAuthorAttributesConverter()
+          required BookAuthorAttributes attributes,
       @JsonKey(name: 'relationships')
-      @BookRelationshipsConverter()
-          required BookRelationships relationships,
+      @BookAuthorRelationshipsConverter()
+          required BookAuthorRelationships relationships,
       @JsonKey(name: 'links')
-      @BookLinksConverter()
-          required BookLinks links}) = _$_Book;
+      @BookAuthorLinksConverter()
+          required BookAuthorLinks links}) = _$_BookAuthor;
 
-  factory _Book.fromJson(Map<String, dynamic> json) = _$_Book.fromJson;
+  factory _BookAuthor.fromJson(Map<String, dynamic> json) =
+      _$_BookAuthor.fromJson;
 
   @override
   @JsonKey(name: 'id')
   String get id;
   @override
   @JsonKey(name: 'attributes')
-  @BookAttributesConverter()
-  BookAttributes get attributes;
+  @BookAuthorAttributesConverter()
+  BookAuthorAttributes get attributes;
   @override
   @JsonKey(name: 'relationships')
-  @BookRelationshipsConverter()
-  BookRelationships get relationships;
+  @BookAuthorRelationshipsConverter()
+  BookAuthorRelationships get relationships;
   @override
   @JsonKey(name: 'links')
-  @BookLinksConverter()
-  BookLinks get links;
+  @BookAuthorLinksConverter()
+  BookAuthorLinks get links;
   @override
   @JsonKey(ignore: true)
-  _$BookCopyWith<_Book> get copyWith => throw _privateConstructorUsedError;
+  _$BookAuthorCopyWith<_BookAuthor> get copyWith =>
+      throw _privateConstructorUsedError;
 }
