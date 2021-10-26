@@ -1,4 +1,3 @@
-import 'package:demo_books/model/book/book.dart';
 import 'package:demo_books/repo/books_repository.dart';
 import 'package:demo_books/ui/home/home_viewmodel.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -26,7 +25,7 @@ void main() {
           .thenAnswer((_) => Future.value(TestHelper.testBook));
     });
 
-    test('on init, books repository is called', () async {
+    test('on init, fetchBooks is called', () async {
       // Setup
 
       // Execution
