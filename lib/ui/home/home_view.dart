@@ -11,25 +11,96 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<HomeViewModel>(
-      builder: (context, viewModel, child) {
+      builder: (context, viewModel, appBar) {
         return Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: const Text('Book index'),
-          ),
+          appBar: appBar! as PreferredSizeWidget,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 800),
-              child: !viewModel.busy
-                  ? _buildLoadedState(context, viewModel)
-                  : _buildBusyState(context, viewModel),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.black12,
+                  ),
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: PopupMenuButton<String>(
+                      initialValue: '',
+                      itemBuilder: (context) {
+                        if (viewModel.stores.isEmpty) {
+                          return const [
+                            PopupMenuItem<String>(
+                              value: '',
+                              child: SizedBox(
+                                width: 128.0,
+                                child: Text('All'),
+                              ),
+                            )
+                          ];
+                        }
+                        return viewModel.stores.map((store) {
+                          return PopupMenuItem<String>(
+                            value: store.id,
+                            child: SizedBox(
+                              width: 128.0,
+                              child: Text(store.attributes.name),
+                            ),
+                          );
+                        }).toList()
+                          ..add(
+                            const PopupMenuItem<String>(
+                              value: '',
+                              child: SizedBox(
+                                width: 128.0,
+                                child: Text('All'),
+                              ),
+                            ),
+                          );
+                      },
+                      onSelected: (id) => viewModel.onStoreSelected(id),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              viewModel.selectedStore == null
+                                  ? 'Tap to select a store'
+                                  : viewModel.selectedStore!.attributes.name,
+                              style: const TextStyle(fontSize: 16.0),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.arrow_drop_down),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 800),
+                    child: !viewModel.busy
+                        ? _buildLoadedState(context, viewModel)
+                        : _buildBusyState(context, viewModel),
+                  ),
+                ),
+              ],
             ),
           ),
         );
       },
       showLoadingState: false,
-      viewModel: HomeViewModel(context.read()),
+      viewModel: HomeViewModel(
+        context.read(),
+        context.read(),
+      ),
+      child: AppBar(
+        centerTitle: true,
+        title: const Text('Book index'),
+      ),
     );
   }
 

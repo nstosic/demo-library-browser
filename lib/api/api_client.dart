@@ -63,26 +63,22 @@ class ApiClient {
   late Dio _client;
   final ApiSerializer _serializer;
 
-  String _buildUrl(String baseUrl, List<FilterStrategy>? filters) {
-    if (filters?.isEmpty ?? true) {
-      return baseUrl;
-    }
+  String _buildUrl(String baseUrl, List<FilterStrategy> filters) {
     final urlBuilder = StringBuffer();
     urlBuilder.write(baseUrl);
-    urlBuilder.write('?');
-    for (FilterStrategy filter in filters!) {
-      urlBuilder.write(filter.toString());
+    urlBuilder.write('?page[size]=55');
+    for (final filter in filters) {
       urlBuilder.write('&');
+      urlBuilder.write(filter.toString());
     }
-    final output = urlBuilder.toString();
-    return output.substring(0, output.length - 1);
+    return urlBuilder.toString();
   }
 
   Future<List<T>> getRemoteCollection<T extends BaseModel>({
     required String url,
     List<FilterStrategy>? filters,
   }) async {
-    final processedUrl = _buildUrl(url, filters);
+    final processedUrl = _buildUrl(url, filters ?? <FilterStrategy>[]);
     final response = await _client.get<List<T>>(
       processedUrl,
       options: Options(

@@ -1,4 +1,5 @@
 import 'package:demo_books/api/api_client.dart';
+import 'package:demo_books/api/filter_strategy.dart';
 import 'package:demo_books/model/book/author/book_author.dart';
 import 'package:demo_books/model/book/book.dart';
 import 'package:demo_books/model/book/book_details.dart';
@@ -30,8 +31,16 @@ class BooksRepository {
   Future<BookDetails> fetchBookDetails(Book book) async {
     final author = await _apiClient.getRemoteDocument<BookAuthor>(
         url: '${BooksRepositoryUrls.authors}/${book.relationships.author.data.id}');
-    final stores =
-        await _apiClient.getRemoteCollection<BookStore>(url: '${BooksRepositoryUrls.stores}/');
+    final stores = await _apiClient.getRemoteCollection<BookStore>(
+      url: '${BooksRepositoryUrls.stores}',
+      filters: [
+        FilterStrategy(
+          field: 'id',
+          operator: FilterOperator.op_in,
+          value: book.relationships.stores.data.map((data) => data.id).join(','),
+        ),
+      ],
+    );
     return BookDetails(
       book: book,
       author: author,
